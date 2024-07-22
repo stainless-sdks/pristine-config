@@ -135,20 +135,20 @@ readme:
 targets:
   node:
     package_name: acme-typescript
-    production_repo: stainless-sdks/acme-node
+    production_repo: stainless-sdks/acme-typescript-public
     publish:
       npm: true
   python:
     package_name: acme
-    production_repo: stainless-sdks/acme-python
+    production_repo: stainless-sdks/acme-python-public
     publish:
       pypi:
         package_name: acme-python
   go:
     package_name: acme-go
-    production_repo: stainless-sdks/acme-go
+    production_repo: stainless-sdks/acme-go-public
   ruby:
     gem_name: acme
-    production_repo: stainless-sdks/acme-ruby
+    production_repo: stainless-sdks/acme-ruby-public
     publish:
       rubygems: false
