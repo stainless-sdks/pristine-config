@@ -1,0 +1,154 @@
+# yaml-language-server: $schema=https://app.stainlessapi.com/config.schema.json
+
+# 'organization' defines metadata such as the name of your organization, the
+# docs site, contact information, which all get rendered on the SDK README.md.
+organization:
+  name: acme
+  docs: https://docs.acme.com
+  contact: support@acme.com
+
+settings:
+  license: Apache-2.0
+
+# 'resources' define the high level mapping of endpoints to the structure in
+# each SDK. For example, the configuration below will correspond to being
+# able to call
+#
+#   - client.status() which makes a request to GET /status
+#
+#   - client.accounts.friends.list() which makes a request to GET /accounts/{account_id}/friends
+#
+# As well as being able to access types with
+#
+#   import Acme from 'acme-typescript'
+#
+#   const result: Acme.Account = …
+#
+# https://app.stainlessapi.com/docs/guides/configure#resources
+resources:
+  $client:
+    methods:
+      status: get /status
+  accounts:
+    models:
+      account: '#/components/schemas/Account'
+      account_configuration: '#/components/schemas/AccountConfiguration'
+      account_link: '#/components/schemas/AccountLink'
+    methods:
+      list: get /accounts
+      create: post /accounts
+      retrieve: get /accounts/{account_id}
+      update: put /accounts/{account_id}
+      link: post /accounts/{account_id}/link
+    subresources:
+      friends:
+        models:
+          friend: '#/components/schemas/FriendResponse'
+        methods:
+          list: get /accounts/{account_id}/friends
+          update: put /accounts/{account_id}/friends/{friend_id}
+          delete: delete /accounts/{account_id}/friends/{friend_id}
+
+# 'pagination' configures how your pagination style works, what request params
+# and response fields map to which pagination roles, and how we match your
+# endpoints against the pagination style.
+#
+# https://app.stainlessapi.com/docs/guides/configure#pagination
+pagination:
+  - name: cursor_page
+    type: cursor
+    request:
+      cursor:
+        type: string
+      limit:
+        type: integer
+    response:
+      data:
+        type: array
+        items: {}
+      next_cursor:
+        type: string
+        nullable: true
+
+# 'client_settings' primarily configures the general behavior of the api client,
+# such as retries, timeouts, headers, and idempotency keys.
+#
+# 'client_settings.opts' defines extra arguments to add to your client,
+# most prominently options that pertain to authentication, but could also be wired
+# up to read from the environment and send a value as a header.
+#
+# https://app.stainlessapi.com/docs/guides/configure#client-opts
+client_settings:
+  idempotency:
+    header: 'Idempotency-Key'
+
+  opts:
+    username:
+      type: string
+      auth:
+        security_scheme: BasicAuth
+        role: username
+      read_env: ACME_USERNAME
+    password:
+      type: string
+      auth:
+        security_scheme: BasicAuth
+        role: password
+      read_env: ACME_PASSWORD
+    acme_api_key:
+      type: string
+      auth:
+        security_scheme: ApiKeyAuth
+      read_env: ACME_API_KEY
+
+# 'environments' map names of an environment to the corresponding base url.
+environments:
+  production: https://api.acme.com/v1
+  sandbox: https://sandbox.acme.com/v1
+
+# 'query_settings' define how more complex query parameters (such as objects and arrays)
+# are rendered.
+query_settings:
+  nested_format: brackets
+  array_format: repeat
+
+# 'readme' defines what endpoints and arguments we should use to generate the snippets
+# in the README of each language.
+readme:
+  example_requests:
+    # The default example request is used for all snippets unless they are specifically overrode.
+    default:
+      type: request
+      endpoint: post /accounts
+      params: {}
+    # You can explicitly override each example from the default case, such as 'headline'
+    # which is the first snippet your user sees in the README. The 'default' example request
+    # will still be used for all other example snippets.
+    headline:
+      type: request
+      endpoint: post /accounts
+      params: {}
+    pagination:
+      type: request
+      endpoint: get /accounts
+      params: {}
+targets:
+  node:
+    package_name: acme-typescript
+    production_repo: stainless-sdks/acme-node
+    publish:
+      npm: true
+  python:
+    package_name: acme
+    production_repo: stainless-sdks/acme-python
+    publish:
+      pypi:
+        package_name: acme-python
+  go:
+    package_name: acme-go
+    production_repo: stainless-sdks/acme-go
+  ruby:
+    gem_name: acme
+    production_repo: stainless-sdks/acme-ruby
+    publish:
+      rubygems: false
