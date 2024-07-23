@@ -140,10 +140,10 @@ targets:
       npm: true
   python:
     package_name: acme
+    project_name: acme-python
     production_repo: stainless-sdks/acme-python-public
     publish:
-      pypi:
-        package_name: acme-python
+      pypi: true
   go:
     package_name: acme-go
     production_repo: stainless-sdks/acme-go-public
