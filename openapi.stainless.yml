@@ -85,18 +85,21 @@ client_settings:
   opts:
     username:
       type: string
+      nullable: true
       auth:
         security_scheme: BasicAuth
         role: username
       read_env: ACME_USERNAME
     password:
       type: string
+      nullable: true
       auth:
         security_scheme: BasicAuth
         role: password
       read_env: ACME_PASSWORD
     acme_api_key:
       type: string
+      nullable: true
       auth:
         security_scheme: ApiKeyAuth
       read_env: ACME_API_KEY
