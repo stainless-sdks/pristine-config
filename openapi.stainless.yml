@@ -158,3 +158,8 @@ targets:
     production_repo: stainless-sdks/acme-ruby-public
     publish:
       rubygems: false
+  java:
+    production_repo: null
+    reverse_domain: 'com.acme'
+    publish:
+      maven: false
