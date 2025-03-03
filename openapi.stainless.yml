@@ -39,10 +39,7 @@ resources:
       create: post /accounts
       retrieve: get /accounts/{account_id}
       update: put /accounts/{account_id}
-      link:
-        endpoint: post /accounts/{account_id}/link
-        skip:
-          - ruby
+      link: post /accounts/{account_id}/link
     subresources:
       friends:
         models:
