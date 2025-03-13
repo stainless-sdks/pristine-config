@@ -160,3 +160,7 @@ targets:
     reverse_domain: 'com.acme'
     publish:
       maven: false
+
+codeflow:
+  publish_packages: true
+  detect_breaking_changes: true
