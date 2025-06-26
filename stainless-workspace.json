@@ -1,0 +1,5 @@
+{
+  "project": "pristine",
+  "openapi_spec": "openapi.yml",
+  "stainless_config": "openapi.stainless.yml"
+}

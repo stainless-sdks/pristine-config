@@ -160,6 +160,9 @@ targets:
     reverse_domain: 'com.acme'
     publish:
       maven: false
+  csharp:
+    production_repo: null
+    package_name: acme
 
 codeflow:
   publish_packages: true
