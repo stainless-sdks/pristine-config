@@ -163,6 +163,8 @@ targets:
   csharp:
     production_repo: null
     package_name: acme
+  php:
+    package_name: acme
 
 codeflow:
   publish_packages: true
