@@ -160,6 +160,7 @@ targets:
     reverse_domain: 'com.acme'
     publish:
       maven: false
+      graalvm_metadata: true
       spring_boot_starter: true
   csharp:
     production_repo: null
