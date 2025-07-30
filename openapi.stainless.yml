@@ -49,6 +49,7 @@ resources:
           update: put /accounts/{account_id}/friends/{friend_id}
           delete: delete /accounts/{account_id}/friends/{friend_id}
 
+#
 # 'pagination' configures how your pagination style works, what request params
 # and response fields map to which pagination roles, and how we match your
 # endpoints against the pagination style.
