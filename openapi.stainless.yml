@@ -141,6 +141,11 @@ targets:
     production_repo: stainless-sdks/acme-typescript-public
     publish:
       npm: true
+  typescript:
+    package_name: acme-typescript
+    production_repo: stainless-sdks/acme-typescript-2-public
+    publish:
+      npm: true
   python:
     package_name: acme
     project_name: acme-python
