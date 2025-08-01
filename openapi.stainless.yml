@@ -171,6 +171,8 @@ targets:
   csharp:
     production_repo: null
     package_name: acme
+    publish:
+      nuget: false
   php:
     package_name: acme
 
