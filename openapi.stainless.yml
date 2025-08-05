@@ -175,6 +175,7 @@ targets:
       nuget: false
   php:
     package_name: acme
+    composer_package_name: 'acme/acme-php'
 
 codeflow:
   publish_packages: true
