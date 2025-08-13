@@ -4,7 +4,7 @@
 # docs site, contact information, which all get rendered on the SDK README.md.
 organization:
   name: acme
-  docs: https://docs.acme.com
+  docs: https://docs.acme.comm
   contact: support@acme.com
 
 settings:
