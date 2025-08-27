@@ -139,26 +139,26 @@ readme:
 targets:
   node:
     package_name: acme-typescript
-    production_repo: stainless-sdks/acme-typescript-public
+    production_repo: null
     publish:
       npm: true
   typescript:
     package_name: acme-typescript
-    production_repo: stainless-sdks/acme-typescript-2-public
+    production_repo: null
     publish:
       npm: true
   python:
     package_name: acme
     project_name: acme-python
-    production_repo: stainless-sdks/acme-python-public
+    production_repo: null
     publish:
       pypi: true
   go:
     package_name: acme-go
-    production_repo: stainless-sdks/acme-go-public
+    production_repo: null
   ruby:
     gem_name: acme
-    production_repo: stainless-sdks/acme-ruby-public
+    production_repo: null
     publish:
       rubygems: false
   java:
