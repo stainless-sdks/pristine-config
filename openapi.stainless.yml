@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://app.stainlessapi.com/config.schema.json
+# yaml-language-server: $schema=https://app.stainlessapi.com/config.schema-internal.json
 
 # 'organization' defines metadata such as the name of your organization, the
 # docs site, contact information, which all get rendered on the SDK README.md.
@@ -176,6 +176,8 @@ targets:
   php:
     package_name: acme
     composer_package_name: 'acme/acme-php'
+  cli:
+    binary_name: pristine
 
 
 codeflow:
