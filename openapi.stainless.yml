@@ -48,6 +48,9 @@ resources:
           list: get /accounts/{account_id}/friends
           update: put /accounts/{account_id}/friends/{friend_id}
           delete: delete /accounts/{account_id}/friends/{friend_id}
+  oas_json:
+    methods:
+      retrieve: get /oas.json
 
 #
 # 'pagination' configures how your pagination style works, what request params
@@ -178,7 +181,6 @@ targets:
     composer_package_name: 'acme/acme-php'
   cli:
     binary_name: pristine
-
 
 codeflow:
   publish_packages: true
