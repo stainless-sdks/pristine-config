@@ -176,7 +176,9 @@ targets:
   php:
     package_name: acme
     composer_package_name: 'acme/acme-php'
-
+  cli:
+    binary_name: pristine
+    production_repo: null
 
 codeflow:
   publish_packages: true
