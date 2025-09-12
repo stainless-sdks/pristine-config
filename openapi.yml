@@ -31,6 +31,16 @@ tags:
 
 # Paths define the endpoints and methods, their request/response types, and more.
 paths:
+  "/oas.json":
+    get:
+      summary: Get OAS
+      operationId: get_oas_json
+      responses:
+        '200':
+          description: Success
+          content:
+            "application/json":
+              schema: {}
   /accounts:
     get:
       tags:
