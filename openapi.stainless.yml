@@ -183,6 +183,8 @@ targets:
     binary_name: pristine
   sql:
     extension_name: pristine
+    publish:
+      pgxn: false
 
 codeflow:
   publish_packages: true
