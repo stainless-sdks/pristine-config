@@ -184,7 +184,7 @@ targets:
   sql:
     extension_name: pristine
     publish:
-      pgxn: false
+      pgxn: true
 
 codeflow:
   publish_packages: true
