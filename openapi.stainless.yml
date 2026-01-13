@@ -9,7 +9,7 @@ organization:
 
 settings:
   license: Apache-2.0
-  # mock_server: steady
+  mock_server: steady
 
 # 'resources' define the high level mapping of endpoints to the structure in
 # each SDK. For example, the configuration below will correspond to being
