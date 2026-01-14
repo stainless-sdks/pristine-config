@@ -182,10 +182,10 @@ targets:
     composer_package_name: 'acme/acme-php'
   cli:
     binary_name: pristine
-  sql:
-    extension_name: pristine
-    publish:
-      pgxn: true
+  # sql:
+  #   extension_name: pristine
+  #   publish:
+  #     pgxn: true
 
 codeflow:
   publish_packages: true
