@@ -424,7 +424,7 @@ components:
     AccountConfiguration:
       type: object
     AccountLink:
-      oneOf:
+      anyOf:
         - type: object
           title: 'Google'
           properties:
