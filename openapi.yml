@@ -103,6 +103,7 @@ paths:
       description: Get account
       parameters:
         - $ref: '#/components/parameters/AccountID'
+      security: [{BearerAuth: []}]
       responses:
         '200':
           description: OK
@@ -128,6 +129,7 @@ paths:
         Update account configuration.
       parameters:
         - $ref: '#/components/parameters/AccountID'
+      security: [{BearerAuth: []}]
       requestBody:
         required: true
         content:
