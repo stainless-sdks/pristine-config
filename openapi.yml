@@ -47,6 +47,7 @@ paths:
         - Account
       summary: List account
       description: List account
+      security: [{BearerAuth: []}]
       parameters:
         - $ref: '#/components/parameters/Cursor'
         - $ref: '#/components/parameters/Limit'
