@@ -108,6 +108,12 @@ client_settings:
       auth:
         security_scheme: ApiKeyAuth
       read_env: ACME_API_KEY
+    acme_bearer_token:
+      type: string
+      nullable: true
+      auth:
+        security_scheme: BearerAuth
+      read_env: ACME_BEARER_TOKEN
 
 # 'environments' map names of an environment to the corresponding base url.
 environments:

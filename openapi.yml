@@ -69,6 +69,7 @@ paths:
         - Account
       summary: Create account
       description: Create account
+      security: [{BearerAuth: []}]
       requestBody:
         required: true
         content:
@@ -477,6 +478,9 @@ components:
     BasicAuth:
       type: http
       scheme: basic
+    BearerAuth:
+      type: http
+      scheme: bearer
     ApiKeyAuth:
       type: apiKey
       in: header
