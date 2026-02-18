@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://app.stainlessapi.com/config.schema-internal.json
+# yaml-language-server: $schema=https://app.stainless.com/config-internal.schema.json
 
 # 'organization' defines metadata such as the name of your organization, the
 # docs site, contact information, which all get rendered on the SDK README.md.
@@ -167,6 +167,7 @@ targets:
   go:
     package_name: acme-go
     production_repo: null
+    edition: go.2026-2-3
   ruby:
     gem_name: acme
     production_repo: null
